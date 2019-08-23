@@ -1,7 +1,6 @@
 '''
 Answer for challenge 23-8 part2
 '''
-#from geopy.geocoders import Nominatim
 
 class Dog:
     '''
