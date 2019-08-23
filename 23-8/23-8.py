@@ -1,3 +1,7 @@
+'''
+Answer for challenge 23-8 part1
+'''
+
 class cat:
 
     def __init__(self, name):
