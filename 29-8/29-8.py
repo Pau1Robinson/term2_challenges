@@ -5,6 +5,7 @@ Converts a string of hex values separated by spaces into ascii
 def convert_hex_num(num):
     '''
     Convert an individual hex value in decimal
+    num: hex value to be converted
     '''
     if num.isdigit() == False:
         if ord(num) > 70:
@@ -25,10 +26,10 @@ def main():
     #Asks the user for the string of hex to be converted
     user_input = input('Enter a string of hex values with spaces between\n')
 
-    #Makes a list of the indexes of the spaces
+    #Makes a list of the indexes of the spaces in user_input
     indices = [value for value in range(len(user_input)) if user_input[value] == ' ']
+    #Added index for end of user_input to indices
     indices.append(len(user_input))
-    print(indices)
 
     for value in indices:
         #Get the hex value from user_input
@@ -38,11 +39,11 @@ def main():
         #Convert hex values to numbers
         hex_first = convert_hex_num(hex_first)
         hex_second = convert_hex_num(hex_second)
-        print(hex_first)
-        print(hex_second)
 
         #Convert hex to decimal
         decimal_num = (int(hex_first) * 16) + int(hex_second)
+
+        #Adds the ascii character for decimal_num to output string
         output_string = f'{output_string}{chr(int(decimal_num))}'
 
     #Print output
